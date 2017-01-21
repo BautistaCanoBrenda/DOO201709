@@ -98,7 +98,7 @@ Los elementos que componen el "contenido" de la página, estarán compuestos por
  <section>
   
   <header>
-   <h1>Segunda sección: "mark", "aside", menu e imagen</h1>
+   <h1>Segunda sección: "mark", "aside", botón e imagen</h1>
   </header>
   
   <p class="next-to-aside">
