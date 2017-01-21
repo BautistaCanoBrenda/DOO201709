@@ -8,7 +8,7 @@ La página a construir deberá contar con la siguiente estructura:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/Week1/Assignment/siteplan.png" width="400" />
 
-## Elementos a utilizar
+## HTML a utilizar
 
 ### Doctype, Html, Head, Title y Body
 
@@ -122,6 +122,129 @@ Los elementos que componen el "contenido" de la página, estarán compuestos por
  </section>
 
 </article>
+```
+
+## CSS a utilizar
+
+### *, body, header
+
+Se deben definir las generalidades del documento completo con el uso de `*`; en nuestro caso, solo establecemos la fuente. Entonces, debe continuarse con particularidades del `body` y elementos principales como los headers. 
+```css
+* {
+	font-family: Lucida Sans, Arial, Helvetica, sans-serif;
+}
+
+body {
+	width: 800px;
+	margin: 0em auto;
+}
+
+header h1 {
+	font-size: 50px;
+	margin: 0px;
+	color: #006;
+}
+
+header h2 {
+	font-size: 15px;
+	margin: 0px;
+	color: #2541B2;
+	font-style: italic;
+}
+
+```
+
+### nav
+
+Las listas en html, por defecto, se organizan de manera vertical. Debemos hacer uso de reglas como `display` y `clear` para tomen un aspecto visual horizontal. Además, para el trabajo de las viñetas, la regla `list-style` nos dá diferentes opciones.
+```css
+nav ul {
+	list-style: none;
+	padding: 5px;
+	display: block;
+	clear: right;
+	background-color: #03256C;
+	padding-left: 4px;
+	height: 24px;
+}
+nav ul li {
+	display: inline;
+	padding: 5px 20px 10px 10px;
+	border-right: 1px solid #fff;
+	vertical-align: middle;
+}
+
+nav ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+nav ul li a:hover {
+	color: #fff;
+}
+
+```
+
+### article
+
+```css
+article > header h1 {
+	font-size: 40px;
+	float: left;
+	margin-left: 14px;
+}
+
+article > header h1 a {
+	color: #000090;
+	text-decoration: none;
+}
+
+article > section header h1 {
+	font-size: 20px;
+	margin-left: 25px;
+}
+
+article p {
+	clear: both;
+	margin-top: 0px;
+	margin-left: 50px;
+}
+
+article p.next-to-aside {
+	width: 500px;
+}
+
+article >  section figure {
+	margin-left: 180px;
+	margin-bottom: 30px;
+}
+```
+
+### aside
+```
+aside p {  
+        position:relative;
+        left:0px;
+        top: -100px;
+		z-index: 1;
+        width: 200px;  
+    	float: right;
+	    font-style: italic; 
+       	color: #73628A;
+}  
+```
+
+### footer
+
+```
+footer p {
+	text-align: center;
+	font-size: 12px;
+	color: #888;
+	margin-top: 24px;
+}
 ```
 
 ## Mockup
