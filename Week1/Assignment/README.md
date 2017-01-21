@@ -16,3 +16,6 @@ La página deberá tener el siguiente aspecto visual:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/Week1/Assignment/targetsite.png" />
 
+Además, el botón deber contar con un evento `onClik`que ejecute un `alert` con un mensaje de ejemplo, como se muestra en la siguiente imagen:
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/Week1/Assignment/alertsite.png" />
