@@ -110,9 +110,9 @@ Los elementos que componen el "contenido" de la página, estarán compuestos por
    <p>Este es un aside que contiene...</p>
   </aside>
   
-  <p>
-   <button type="button" onClick="JavaScript:alert('Ejemplo de alert')">Botón 1</button>
-  </p>
+  <div>
+   <button type="button" onClick="javascript:alert('Ejemplo de alert')">Botón 1</button>
+  </div>
   
   <figure>
    <img src="logo.png" alt="Logo FCFM" width="200" height="100">
