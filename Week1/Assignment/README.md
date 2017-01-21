@@ -10,6 +10,31 @@ La página a construir deberá contar con la siguiente estructura:
 
 ## Elementos a utilizar
 
+### Doctype, Html, Head, Title y Body
+
+La estructura de la página deberá estar compuesta por estos 5 elementos:
+
+`
+<!doctype html> 
+<html>
+  
+  <head>
+    <title> Título de la página </title>
+  <head>
+  
+  <body>
+    
+    <!-- Comentario: El contenido que se muestra en el navegador
+    se encuentra dentro del body -->
+    
+  </body>
+ 
+</html>
+`
+
+### 
+
+
 ## Mockup
 
 La página deberá tener el siguiente aspecto visual:
