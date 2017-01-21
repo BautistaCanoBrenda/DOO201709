@@ -10,5 +10,9 @@ La página a construir deberá contar con la siguiente estructura:
 
 ## Elementos a utilizar
 
+## Mockup
+
+La página deberá tener el siguiente aspecto visual:
+
 <img src="https://github.com/migsalazar/DOO201709/blob/master/Week1/Assignment/targetsite.png" />
 
