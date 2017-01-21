@@ -10,6 +10,8 @@ La página a construir deberá contar con la siguiente estructura:
 
 ## HTML a utilizar
 
+Se deberá almacenar en un archivo con nombre y extensión: `index.html`.
+
 ### Doctype, Html, Head, Title y Body
 
 La estructura de la página deberá estar compuesta por estos 5 elementos (los elementos aquí descritros no son parte de la imagen anterior donde se describe la planeación de la página) :
@@ -125,6 +127,18 @@ Los elementos que componen el "contenido" de la página, estarán compuestos por
 ```
 
 ## CSS a utilizar
+
+Se deberá almacenar en un archivo con nombre y extensión: `style.css`.
+
+### Referencia en html
+
+El archivo de `css` deberá estar referenciado en el `head` del archivo `index.html`
+
+```html
+<head>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
 
 ### *, body, header
 
