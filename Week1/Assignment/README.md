@@ -14,7 +14,7 @@ La página a construir deberá contar con la siguiente estructura:
 
 La estructura de la página deberá estar compuesta por estos 5 elementos (los elementos aquí descritros no son parte de la imagen anterior donde se describe la planeación de la página) :
 
-```
+```html
 <!doctype html> 
 <html>
   
@@ -36,7 +36,7 @@ La estructura de la página deberá estar compuesta por estos 5 elementos (los e
 
 El `header` contendrá un elemento `hgroup` para agrupar los diferentes niveles de títulos (Nota: No confundir `header` con el `head` indicado en los elementos anteriores):
 
-```
+```html
 <body>
 
  <header>
@@ -53,7 +53,7 @@ El `header` contendrá un elemento `hgroup` para agrupar los diferentes niveles 
 
 El menú deberá estar compuesto por un elemento `nav` y una lista de html:
 
-```
+```html
 <body>
 
  <nav>
@@ -71,7 +71,8 @@ El menú deberá estar compuesto por un elemento `nav` y una lista de html:
 ### Article y Section
 
 Los elementos que componen el "contenido" de la página, estarán compuestos por un `article` y `section`:
-```
+
+```html
 <nav>
 	<!-- lista html -->
 </nav>
