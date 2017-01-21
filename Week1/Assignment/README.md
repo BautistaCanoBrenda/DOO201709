@@ -72,6 +72,10 @@ El menú deberá estar compuesto por un elemento `nav` y una lista de html:
 
 Los elementos que componen el "contenido" de la página, estarán compuestos por un `article` y `section`:
 ```
+<nav>
+	<!-- lista html -->
+</nav>
+
 <article>
  <header>
   <h1> Título del artículo completo </h1>
