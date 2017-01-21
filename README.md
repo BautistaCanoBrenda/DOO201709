@@ -10,11 +10,11 @@ La página principal relacionada a este repositorio se encuentra [aquí](http://
 
 ## Presentaciones
 
-Las presentaciones del curso las podrás encontrar [aquí](http://migsalazar.com/DOO201709/slides/). También puedes visualizarla [con el explorador de github](https://github.com/migsalazar/DOO201709/tree/master/docs/slides/lessons).
+Las presentaciones del curso las podrás encontrar [aquí](http://migsalazar.com/DOO201709/slides/). También puedes visualizarlas [con el explorador de github](https://github.com/migsalazar/DOO201709/tree/master/docs/slides/lessons).
 
 ## Asignaciones
 
-La asignación o asignaciones de cada semana, se encuentran divididas por carpetas (Ej.: Week1, Week2, ... WeekN). Cada carpeta contiene un archivo README.md en donde se describe la actividad. En la misma descripción, se indica el material a utilizar así como la sección de las presentaciones relacionadas al tema.
+La asignación o asignaciones de cada semana, se encuentran divididas por carpetas (Ej.: Week1, Week2, ... WeekN). Cada carpeta contiene un archivo README.md en donde se describe la actividad. En la misma descripción, se indican la información necesaria así como la sección de las presentaciones relacionadas al tema.
 
 ## Wiki
 
