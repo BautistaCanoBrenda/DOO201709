@@ -138,7 +138,7 @@ El archivo de `css` deberá estar referenciado en el `head` del archivo `index.h
 <head>
 	<link rel="stylesheet" href="style.css" />
 </head>
-
+```
 
 ### *, body, header
 
