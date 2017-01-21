@@ -88,8 +88,7 @@ h3, h4, h5, h6 {
 }
 
 a {
-  /*color:#39c;*/
-  color: #c63417;
+  color: #279AF1;
   text-decoration:none;
 }
 
@@ -100,7 +99,7 @@ a:hover {
 a small {
   font-size:11px;
   color:#777;
-  margin-top:-0.3em;
+  margin-top: 3px;
   display:block;
 }
 
@@ -296,6 +295,7 @@ footer {
   header ul, header p.view {
     position:static;
   }
+
 
   pre, code {
     word-wrap:normal;
