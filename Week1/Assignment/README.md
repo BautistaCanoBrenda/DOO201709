@@ -14,7 +14,7 @@ La página a construir deberá contar con la siguiente estructura:
 
 La estructura de la página deberá estar compuesta por estos 5 elementos:
 
-`
+```
 <!doctype html> 
 <html>
   
@@ -30,7 +30,7 @@ La estructura de la página deberá estar compuesta por estos 5 elementos:
   </body>
  
 </html>
-`
+```
 
 ### 
 
