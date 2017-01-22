@@ -8,6 +8,7 @@ La página a construir deberá contar con la siguiente estructura:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week1-img/siteplan.png" width="400" />
 
+**Nota: La imagen solo muestra las secciones mas representativas.**
 
 ## HTML a utilizar
 
