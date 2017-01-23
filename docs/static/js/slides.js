@@ -15,6 +15,7 @@ $(function(){
       controls: true,
       progress: true,
       slideNumber: 'c/t',
+      history: true,
       keyboard: true,
       overview: true,
       center: true,
