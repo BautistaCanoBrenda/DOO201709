@@ -4,7 +4,7 @@ Diseño Orientado a Objetos - Primavera 2017
 
 ## Introducción
 
-DOO201709 contiene el material referente al curso de Diseño Orientado a Objetos para LSTI en FCFM (Grupo 09 - Primavera 2017). 
+DOO201709 contiene el material referente al curso de Diseño Orientado a Objetos para LSTI en FCFM (Grupo 07 - Primavera 2017). 
 
 La página principal relacionada a este repositorio se encuentra [aquí](http://migsalazar.com/DOO201709/). Solo es informativa y los enlaces apuntan a secciones de este mismo repositorio.
 
