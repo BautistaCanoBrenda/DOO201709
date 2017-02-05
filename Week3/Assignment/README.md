@@ -23,7 +23,7 @@ El proyecto deberá tener de nombre `BookStore`:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/05.png" width="400" />
 
-Elegir GlassFish como web server:
+Utilizar `GlassFish` como servidor:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/06.png" width="400" />
 
