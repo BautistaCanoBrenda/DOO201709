@@ -148,10 +148,6 @@ p label {
 
 ## Notas Importantes
 
-- La lista de géneros deberá contener los siguientes elementos:
-
-<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/03.png" width="400" />
-
 - Los elementos del formulario del HTML deberán estar encerrados en una etiqueta `<form>`, el cual deberá tener un `action` que representará la url para el request.
 
 Ejemplo:
