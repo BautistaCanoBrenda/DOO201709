@@ -51,20 +51,6 @@ Una vez creado el servlet, deberá utilizarse el código plantilla para la recup
 
 ```java
 
-/*
-Notas importantes:
-
-- Los elementos del formulario del HTML deberán estar encerrados en una etiqueta <form></form>, el cual deberá tener un action que representará la url a pedir una vez hecho el request.
-
-Ejemplo:
-
-<form action="CrearLibro"> <!---- "CrearLibro" deberá coincidir con el nombre del servlet, es decir, de la clase. -->
-
-	<!-- aqui los campos del formulario -->
-
-</form>
-*/
-
 public class CrearLibro extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -160,6 +146,25 @@ p label {
 }
 ```
 
-Nota: La lista de géneros deberá contener los siguientes elementos:
+## Notas Importantes
+
+- La lista de géneros deberá contener los siguientes elementos:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/03.png" width="400" />
+
+- Los elementos del formulario del HTML deberán estar encerrados en una etiqueta `<form>`, el cual deberá tener un `action` que representará la url para el request.
+
+Ejemplo:
+
+```html
+
+<!-- El nombre del action "CrearLibro", deberá coincidir con el nombre del servlet. -->
+<form action="CrearLibro">
+
+	<!-- Aqui los campos del formulario -->
+
+	<!-- Es necesario que los campos del formulario lleven una propiedad name. La cual será la variable a recuperar en el back-end -->
+	<input type="text" name="isbn" />
+
+</form>
+```
