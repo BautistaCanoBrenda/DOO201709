@@ -97,6 +97,10 @@ public class CrearLibro extends HttpServlet {
 
 ## Construcción de Front-end
 
+La siguiente imagen muestra de manera general la estructura a construir en el archivo `index.html`. No se muestran todos los elementos, solo se hace referencia a los necesarios para la estructura básica.
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/15.png" width="400" />
+
 Para lograr el aspecto visual del archivo `index.html`, deberá construir y referenciar una hoja de estilos. La hoja de estilos deberá tener el nombre de `bookstore.css` y estar almacenada en una carpeta de nombre `static` dentro de `Web Pages`.
 
 Crear una nueva carpeta:
