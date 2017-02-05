@@ -1,6 +1,15 @@
 # Asignación de la semana 3
 
-Construir un servlet simple con JEE y una página en HTML5
+Construir un servlet simple con JEE y una página en HTML5.
+
+La descripción de la asignación está dividida de la siguiente manera:
+
+- Objetivo
+- Construcción de Back-End
+- Construcción de Front-End
+- Notas Importantes
+
+Todas las secciones son necesarias para completar exitosamente la asignación. 
 
 ## Objetivo
 
@@ -148,7 +157,7 @@ p label {
 
 ## Notas Importantes
 
-- Los elementos del formulario del HTML deberán estar encerrados en una etiqueta `<form>`, el cual deberá tener un `action` que representará la url para el request.
+Los elementos del formulario del HTML deberán estar encerrados en una etiqueta `<form>`, el cual deberá tener un `action` que representará la url para el request.
 
 Ejemplo HTML:
 
@@ -178,6 +187,4 @@ public class CrearLibro extends HttpServlet {
 
 	}
 }
-
-
 ```
