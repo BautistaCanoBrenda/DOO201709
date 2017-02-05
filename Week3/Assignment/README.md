@@ -32,7 +32,7 @@ No deberá utilizarse un framework adicional, por lo cual en el paso de "framewo
 
 No deberá utilizarse un framework adicional, por lo cual en el paso de "frameworks" deberá dejarse sin selección alguna:
 
-Construir la página de HTML utilizando el archivo `index.html` que se encuentra dentro de la carpeta `Web Pages` del proyecto creado. Para la construcción del front-end puede apoyarse de la sección Construcción de Front-End.
+Construir la página de HTML utilizando el archivo `index.html` que se encuentra dentro de la carpeta `Web Pages` del proyecto creado. Para la construcción del front-end puede apoyarse de la sección [Construcción de Front-End](https://github.com/migsalazar/DOO201709/tree/master/Week3/Assignment#construcción-de-front-end).
 
 Una vez creado el front-end, deberá crearse un nuevo Servlet, como aparece en la imagen:
 
