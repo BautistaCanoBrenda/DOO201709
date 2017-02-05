@@ -6,7 +6,9 @@ Construir un servlet simple con JEE y una página en HTML5
 
 La página de HTML deberá visualizarse de la siguiente manera:
 
+<div style="text-align: center;">
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/01.png" width="400" />
+</div>
 
 Al presionar el botón `Guardar` el servlet deberá responder con la siguiente información:
 
