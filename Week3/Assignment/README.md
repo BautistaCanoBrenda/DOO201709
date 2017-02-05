@@ -150,7 +150,7 @@ p label {
 
 - Los elementos del formulario del HTML deberán estar encerrados en una etiqueta `<form>`, el cual deberá tener un `action` que representará la url para el request.
 
-Ejemplo:
+Ejemplo HTML:
 
 ```html
 
@@ -163,4 +163,21 @@ Ejemplo:
 	<input type="text" name="isbn" />
 
 </form>
+```
+
+Ejemplo JAVA:
+
+```java
+//Coincide la clase o servlet CrearLibro con el valor de la propiedad action del form en el html
+public class CrearLibro extends HttpServlet {
+
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	            throws ServletException, IOException {
+
+		String isbn = request.getParameter("isbn"); //getParameter("isbn") coincide con el valor de la propiedad name del input en el html
+
+	}
+}
+
+
 ```
