@@ -6,9 +6,8 @@ Construir un servlet simple con JEE y una página en HTML5
 
 La página de HTML deberá visualizarse de la siguiente manera:
 
-<div style="text-align: center;">
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/01.png" width="400" />
-</div>
+
 
 Al presionar el botón `Guardar` el servlet deberá responder con la siguiente información:
 
@@ -52,7 +51,11 @@ Agregar la información del servlet en el archivo `web.xml`:
 
 Para lograr el aspecto visual del archivo `index.html`, deberá construir y referenciar una hoja de estilos. La hoja de estilos deberá tener el nombre de `bookstore.css` y estar almacenada en una carpeta de nombre `static` dentro de `Web Pages`.
 
+Crear una nueva carpeta:
+
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/11.png" width="400" />
+
+Agregar el archivo `bookstore.css`
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/12.png" width="400" />
 
@@ -60,7 +63,7 @@ Para lograr el aspecto visual del archivo `index.html`, deberá construir y refe
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/14.png" width="400" />
 
-Para lograr el aspecto visual del objetivo, `bookstore.css` deberá contener reglas de estilos similares a las siguientes:
+La hoja de estilos `bookstore.css` deberá contener reglas similares a las siguientes:
 
 ```css
 html, body {
@@ -104,6 +107,6 @@ p label {
 }
 ```
 
-La lista de géneros deberá contener los siguientes elementos:
+Nota: La lista de géneros deberá contener los siguientes elementos:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/03.png" width="400" />
