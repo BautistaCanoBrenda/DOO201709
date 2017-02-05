@@ -47,6 +47,59 @@ Agregar la información del servlet en el archivo `web.xml`:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/10.png" width="400" />
 
+Una vez creado el servlet, deberá utilizarse el código plantilla para la recuperación de datos del `request` e imprimirlos. Ejemplo:
+
+```java
+
+/*
+Notas importantes:
+
+- Los elementos del formulario del HTML deberán estar encerrados en una etiqueta <form></form>, el cual deberá tener un action que representará la url a pedir una vez hecho el request.
+
+Ejemplo:
+
+<form action="CrearLibro"> <!---- "CrearLibro" deberá coincidir con el nombre del servlet, es decir, de la clase. -->
+
+	<!-- aqui los campos del formulario -->
+
+</form>
+*/
+
+public class CrearLibro extends HttpServlet {
+
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+	            throws ServletException, IOException {
+
+	        response.setContentType("text/html;charset=UTF-8");
+
+	        try (PrintWriter out = response.getWriter()) {
+
+				//El parámetro enviado a getParameter() deberá coincidir con la propiedad name del elemento de HTML
+				//Ejemplo: <input type="text" name="variable" /> coincide con la siguiente línea:
+	            String variable = request.getParameter("variable");
+
+	            out.println("<!DOCTYPE html>");
+	            out.println("<html>");
+	            out.println("<head>");
+
+				out.println("<title>Información del Libro</title>");
+	            out.println("<link href=\"static/hojaestilo.css\" rel=\"stylesheet\" />");
+
+				out.println("</head>");
+	            out.println("<body>");
+
+				out.println("<h1>Título</h1>");
+	            out.println("<p>Parámetro: " + parametro + " </p>");
+
+	            out.println("</body>");
+	            out.println("</html>");
+	        }
+	    }
+
+}
+```
+
+
 ## Construcción de Front-end
 
 Para lograr el aspecto visual del archivo `index.html`, deberá construir y referenciar una hoja de estilos. La hoja de estilos deberá tener el nombre de `bookstore.css` y estar almacenada en una carpeta de nombre `static` dentro de `Web Pages`.
