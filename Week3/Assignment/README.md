@@ -9,7 +9,7 @@ La descripción de la asignación está dividida de la siguiente manera:
 - Construcción de Front-End
 - Notas Importantes
 
-Todas las secciones son necesarias para completar exitosamente la asignación. 
+Todas las secciones son necesarias para completar exitosamente la asignación.
 
 ## Objetivo
 
@@ -48,7 +48,7 @@ Una vez creado el front-end, deberá crearse un nuevo Servlet, como aparece en l
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/08.png" width="400" />
 
-Deberá organizar su servlet dentro del paquete `com.bookstore.servlets`:
+Deberá crearse con el nombre de `CrearLibro` y organizarlo dentro del paquete `com.bookstore.servlets`:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week3-img/09.png" width="400" />
 
