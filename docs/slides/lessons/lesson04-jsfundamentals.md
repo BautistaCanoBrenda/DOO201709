@@ -89,7 +89,7 @@ Javascript tiene mucha similitud con lenguajes como java, c, c++ y c# en lo que 
 
 -==========-
 
-## if-else
+## Flujo de control / if-else
 
 ```js
 var condition = true;
@@ -106,7 +106,7 @@ else {
 
 -==========-
 
-## switch
+## Flujo de control / switch
 
 ```js
 var expression = 1;
@@ -135,12 +135,12 @@ switch (expression) {
 
 -==========-
 
-## for
+## Flujo de control / for
 
 -==========-
 
-## while
+## Flujo de control / while
 
 -==========-
 
-## do-while
+## Flujo de control / do-while
