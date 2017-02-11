@@ -257,3 +257,8 @@ var person = new Person("Pepe", "El Toro");
 console.log(person.name);
 console.log(person.getFullName());
 ```
+-==========-
+
+## Objetos / Constructor vs Notación Literal
+
+La principal diferencia entre usar un objeto a través de un constructor vs la notación literal, es que la notación literal se comporta como un `singleton`, mientras que el constructor nos amplia la funcionalidad de construir instancias únicas para cada objeto.
