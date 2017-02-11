@@ -137,10 +137,123 @@ switch (expression) {
 
 ## Flujo de control / for
 
+```js
+for(var i = 0; i < 10; i++) {
+
+	 //Imprime en consola "Iteracion 1", "Iteración 2",..., "Iteración 9".
+ 	console.log("Iteración" + i);
+}
+```
+
 -==========-
 
 ## Flujo de control / while
 
+```js
+var i = 0;
+while(i < 10) {
+	console.log("Iteración " + i); //Imprime en consola "Iteracion 1", "Iteración 2",..., "Iteración 9".
+ 	i++; //Aumenta en una unidad el valor de i
+}
+```
+
 -==========-
 
 ## Flujo de control / do-while
+
+```js
+var i = 0;
+do {
+	console.log("Iteración " + i); //Imprime en consola "Iteracion 1", "Iteración 2",..., "Iteración 9".
+ 	i++; //Aumenta en una unidad el valor de i
+} while (i < 10);
+```
+
+-==========-
+
+## Arreglos
+
+Un arreglo es una colección de elementos. En javascript, los elementos pueden ser de diferentes tipos:
+
+```js
+var colors = ['blue', 'yellow', 'red', 'white' ];
+```
+
+-==========-
+
+## Iterar arreglos
+
+Aunque se puede utilizar el `for` tradicional, es mas sencillo iterar de la siguiente manera:
+
+```js
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(function(number){
+
+	//Notar que el arreglo numbers, no es la variable number que se imprime.
+	console.log(number); //Imprime en consola la variable number
+});
+```
+
+-==========-
+
+## Acceder a elementos de un arreglo
+
+```js
+var fruits = ['apple', 'orange', 'pineapple'];
+
+var fruit = fruits[0];
+
+console.log(fruit); //Imprime "apple"
+```
+
+-==========-
+
+## Objetos
+
+Un objeto es una colección de propiedades y funciones.
+
+- Una propiedad de un objeto es una asociación entre un nombre (key) y un valor. El valor de una propiedad puede ser cualquier tipo de dato e incluso.
+- Las funciones generalmente son conocidas como métodos.
+
+-==========-
+
+## Objetos / Notación literal
+
+```js
+
+var person = {
+
+	name: "Pepe",
+	lastName: "El toro",
+	getFullName: function() {
+		return this.name + " " + this.lastName;
+	}
+};
+
+//Acceder a las propiedades -  ejemplo:
+console.log(person.name); //Imprime "Pepe"
+console.log(person.getFullName()); //Imprime "Pepe El Toro"
+```
+
+-==========-
+
+## Objetos / Constructor
+
+```js
+function Person(name, lastName) {
+	this.name = name;
+	this.lastName = lastName;
+
+	this.getFullName = function() {
+		return this.name + " " + this.lastName;
+	};
+};
+
+var person = new Person("Pepe", "El Toro");
+
+//Notar el uso de parentesis en getFullName dado que a pesar de que "es una propiedad"
+//su comportamiento es el de una función.
+console.log(person.name);
+console.log(person.getFullName());
+```
