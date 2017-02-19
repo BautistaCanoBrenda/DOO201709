@@ -19,7 +19,9 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 ## Actividad 1 - Construcción de vistas
 
 1.- Crear un proyecto de tipo `Java Web` en NetBeans.
+
 2.- Elimina el archivo `index.html` que crea por defecto NetBeans y que se encuentra dentro de la carpeta `Web Pages`.
+
 3.- Agrega tres archivos de tipo JSP: `login.jsp`, `success.jsp` y `error.jsp`.
 
 
@@ -55,11 +57,11 @@ La página de `login.jsp` deberá ser tener un aspecto muy similar al de la sigu
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/05.png" width="300" />
 
-3.- Dentro del servlet se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`. El resto del código del servlet, se definirá en las siguientes actividades.
+3.- Dentro del servlet, en el método `processRequest`, se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`. El resto del código del servlet, se definirá en las siguientes actividades.
 
 ## Actividad 3 - Contruccion de modelo
 
-1.- Crear una clase de Java de nombre `User` que funcionará como modelo. La clase deberá estar dentro de un nuevo paquete de nombre `week5.models`, como aparece en la siguiente imagen:
+1.- Crear una clase de Java con nombre `User` que funcionará como modelo. La clase deberá estar dentro de un nuevo paquete de nombre `week5.models`, como aparece en la siguiente imagen:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/06.png" width="300" />
 
@@ -68,7 +70,7 @@ La página de `login.jsp` deberá ser tener un aspecto muy similar al de la sigu
 2.- La clase `User` deberá contener lo siguiente:
 - Dos propiedades privadas de tipo `String`: `username` y `password`.
 - Un constructor que reciba como parámetro de entrada dos `String`. El primero representará el usuario y el segundo la contraseña. En el cuerpo del constructor deberá establecer el valor de los parámetros de entrada hacia las propiedades privadas `username` y `password`.
-- Un método de nombre `getUsername` que devolverá un `String`, es decir, el valor del username.
+- Un método de nombre `getUsername` que devolverá un `String`, es decir, el valor de `username`.
 - El código siguiente muestra el ejemplo:
 
 ```java
@@ -90,9 +92,9 @@ public class User {
 }
 ```
 
-3.- Crear una segunda clase `Authentication` la cual deberá contener lo siguiente:
-- Un método estático de nombre `authenticate` que devuelva un tipo `boolean` el cual nos indicará si el usuario debió o no autenticarse.
-- En el método `authenticate` definiremos dos variables de tipo `String`: `userDataBase` y `passwordDataBase` que actuarán como información dummy, es decir, información falsa y *hardcoded* para emular que obtuvimos esa información de la base de datos. Esta información dummy, nos servirá para comparar la información de "la base de datos" contra lo que capturó el usuario.
+3.- Crear una segunda clase `Authentication`, dentro del mismo paquete `week5.models`, la cual deberá contener lo siguiente:
+- Un método estático de nombre `authenticate` que devuelva un tipo `boolean`, el cual nos indicará si el usuario debió o no autenticarse.
+- En el método `authenticate` definiremos dos variables de tipo `String`: `userDataBase` y `passwordDataBase` que actuarán como información *dummy*, es decir, información falsa y *hardcoded* para emular que obtuvimos esa información de la base de datos. Esta información *dummy*, nos servirá para comparar la información de "la base de datos" contra lo que capturó el usuario.
 - La validación la realizaremos a través del método `equals`.
 - El código siguiente muestra el ejemplo:
 
@@ -101,7 +103,7 @@ public class Authentication {
 
     public static boolean authenticate(String username, String password) {
 
-        //Variables dummy.
+        //Variables *dummy*.
         //Se hardcodean los valores "Miguel" y "MiPassword" para emular que se obtuvieron de una base de datos
         String userDataBase = "Miguel";
         String passwordDataBase = "MiPassword";
@@ -125,9 +127,9 @@ Al finalizar las actividades anteriores, se deberá tener una estructura del pro
 
 ## Actividad 4 - Refactorizacion de controladores y vistas.
 
-1.- Una vez con las vistas, el servlet y las clases modelo. Podemos continuar el código de nuestro controlador (servlet).
+1.- Una vez con las vistas, el controlador y los modelos, podemos continuar el código de nuestro controlador (servlet).
 
-2.- Para utilizar los modelos, debemos importar el paquete `week5.models.*`. Además, importaremos la clase `RequestDispatcher` que esta dentro del paquete `javax.servlet`:
+2.- En nuestro controlador, haremos uso de nuestros modelos. Para utilizarlos, debemos importar el paquete `week5.models.*`. Además, importaremos la clase `RequestDispatcher` que esta dentro del paquete `javax.servlet`:
 
 ```java
 import javax.servlet.RequestDispatcher;
@@ -177,7 +179,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 }
 ```
 
-4.- Una vez creada la lógica del `LoginController`, ajustaremos la vista `success.jsp`. A continuación se muestra el código de ejemplo:
+4.- Una vez creada la lógica del `LoginController`, ajustaremos la vista `success.jsp`. A continuación se muestra el código de ejemplo de la vista `success.jsp`:
 
 ```html
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -199,9 +201,12 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 ## Actividad 5 - Prueba de la aplicación
 
 ### Primer prueba
-1.- Ejecutar el proyecto y acceder a la url http://localhost:8080/week5/login.jsp
-2.- Teclear el usuario y contraseña. Estos valores deberán coincidir con los descritos en la Actividad 2, las variables dummy.
+1.- Ejecutar el proyecto y acceder a la url `http://localhost:8080/week5/login.jsp`
+
+2.- Teclear el usuario y contraseña. Estos valores deberán coincidir con los descritos en la Actividad 2, las variables *dummy*.
+
 3.- Dar clic en el botón Iniciar Sesión y validar que envía a la página de `succes.jsp` y además nos muestra un saludo con nuestro nombre.
+
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/09.png" width="300" />
 
@@ -210,8 +215,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 ### Segunda prueba
 
 1.- Volver a ejecutar la página `login.jsp`.
-2.- Teclear un usurio y contraseña incorrectos, es decir, que no coincidan con los descritos en las variables dummy.
+
+2.- Teclear un usurio y contraseña incorrectos, es decir, que no coincidan con los descritos en las variables *dummy*.
+
 3.- Dar clic en el botón Iniciar Sesión y validar que envía a la página de `error.jsp`.
-4.- Probar el enlace "Regresar" y validar que reedirecciona hacia `login.jsp`
+
+4.- Probar el enlace "Regresar" y validar que reedirecciona hacia `login.jsp`.
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/11.png" width="300" />
