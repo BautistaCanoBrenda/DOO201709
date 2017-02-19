@@ -42,3 +42,6 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/05.png" width="300" />
 
+
+
+# Desc. en proceso
