@@ -16,7 +16,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 - Crear un servlet que funcionará como `Controller`.
 - Crear dos clases de Java que funcionarán como `Model`.
 
-### Actividad 1 - Construcción de vistas
+## Actividad 1 - Construcción de vistas
 
 - Crear un proyecto de tipo `Java Web` en NetBeans.
 - Elimina el archivo `index.html` que crea por defecto dentro de la carpeta `Web Pages`.
@@ -45,7 +45,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 6.- La página `success.jsp` se modificará en las actividades posteriores.
 
-### Actividad 2 - Construcción de controladores
+## Actividad 2 - Construcción de controladores
 
 1.- Crear un servlet de nombre `LoginController`. Durante la creación del servlet deberá especificarse que sea creado dentro del paquete `week5.controllers`.
 
@@ -57,7 +57,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 3.- Dentro del servlet se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`. El resto del código del servlet, se definirá en las siguientes actividades.
 
-### Actividad 3 - Contruccion de modelo
+## Actividad 3 - Contruccion de modelo
 
 1.- Crear una clase de Java de nombre `User` que funcionará como modelo. La clase deberá estar dentro de un nuevo paquete de nombre `week5.models`, como aparece en la siguiente imagen:
 
@@ -116,7 +116,7 @@ public class Authentication {
 }
 ```
 
-### Actividad 4 - Refactorizacion de controladores y vistas.
+## Actividad 4 - Refactorizacion de controladores y vistas.
 
 1.- Una vez con las vistas, el servlet y las clases modelo. Podemos continuar el código de nuestro controlador (servlet). En el controlador construiremos las siguiente lógica:
 
