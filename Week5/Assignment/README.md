@@ -54,7 +54,37 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/05.png" width="300" />
 
-3.- Dentro del servlet se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`.
+3.- Dentro del servlet se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`. El resto del código del servlet, se definirá en las siguientes actividades.
 
+### Actividad 3
 
-# Desc. en proceso
+1.- Crear una clase de Java de nombre `User` que funcionará como modelo. La clase deberá estar dentro de un nuevo paquete de nombre `week5.models`, como aparece en la siguiente imagen:
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/06.png" width="300" />
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/07.png" width="300" />
+
+2.- La clase `User` deberá contener lo siguiente:
+- Dos propiedades privadas de tipo `String`: `username` y `password`.
+- Un constructor que reciba como parámetro de entrada dos `String`. El primero representará el usuario y el segundo la contraseña. En el cuerpo del constructor deberá establecer el valor de los parámetros de entrada hacia las propiedades privadas `username` y `password`.
+- Un método de nombre `getUsername` que devolverá un `String`, es decir, el valor del username.
+- El código siguiente muestra el ejemplo:
+
+```java
+package week5.models;
+
+public class User {
+   
+    private String username;
+    private String password;
+    
+    public User(String username, String password) { 
+        this.username = username;
+        this.password = password;
+    }
+    
+    public String getUsername() { 
+        return this.username;
+    }
+}
+```
+
