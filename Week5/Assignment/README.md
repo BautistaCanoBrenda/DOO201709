@@ -2,10 +2,10 @@
 
 ## Crear un login simple con MVC
 
-Objetivo: Al finalizar la actividad deberás ser capaz de construir un sistema de autenticacin simple basado en el patrón de diseño `MVC` (Model-View-Controler).
+**Objetivo**: Al finalizar la actividad deberás ser capaz de construir un sistema de autenticación simple basado en el patrón de diseño `MVC` (Model-View-Controler).
 
 ## Preparación
-La descripción de esta asignación parte del supuesto que ya cuentas con la versión de NetBeans (EE) y que incluye un contenedor Web GlassFish o Apache Tomcat atendiendo un puerto de escucha 8080.
+La descripción de esta asignación parte del supuesto que ya se cuenta con la versión de NetBeans (EE) y que incluye un contenedor Web GlassFish o Apache Tomcat atendiendo un puerto de escucha 8080.
 
 ## Actividades
 
@@ -18,9 +18,9 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 ## Actividad 1 - Construcción de vistas
 
-- Crear un proyecto de tipo `Java Web` en NetBeans.
-- Elimina el archivo `index.html` que crea por defecto dentro de la carpeta `Web Pages`.
-- Agrega tres archivos de tipo JSP: `login.jsp`, `success.jsp` y `error.jsp`.
+1.- Crear un proyecto de tipo `Java Web` en NetBeans.
+2.- Elimina el archivo `index.html` que crea por defecto NetBeans y que se encuentra dentro de la carpeta `Web Pages`.
+3.- Agrega tres archivos de tipo JSP: `login.jsp`, `success.jsp` y `error.jsp`.
 
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/01.png" width="300" />
@@ -35,7 +35,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
  - El formulario deberá enviar los datos mediante el método de transferencia `POST`.
  - El formulario deberá contener tres `input`: uno de tipo `text`, el segundo de tipo `password` y el tercero de tipo `submit` con el valor `Iniciar sesión`.
 
- Deberá ser muy similar al formulario de la siguiente imagen:
+La página de `login.jsp` deberá ser tener un aspecto muy similar al de la siguiente imagen:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/03.png" width="300" />
 
@@ -43,7 +43,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/03_1.png" width="300" />
 
-6.- La página `success.jsp` se modificará en las actividades posteriores.
+6.- La página `success.jsp` se modificará en las actividades posteriores. Por ahora se dejará el código que genera NetBeans por defecto.
 
 ## Actividad 2 - Construcción de controladores
 
@@ -125,10 +125,21 @@ Al finalizar las actividades anteriores, se deberá tener una estructura del pro
 
 ## Actividad 4 - Refactorizacion de controladores y vistas.
 
-1.- Una vez con las vistas, el servlet y las clases modelo. Podemos continuar el código de nuestro controlador (servlet). En el controlador construiremos las siguiente lógica:
+1.- Una vez con las vistas, el servlet y las clases modelo. Podemos continuar el código de nuestro controlador (servlet).
 
-- Recuperar los valores enviados por el cliente (descrito en la actividad 2)
-- Invocar el método `authenticate` de la clase `Authentication`, enviando la información de los valores del request.
+2.- Para utilizar los modelos, debemos importar el paquete `week5.models.*`. Además, importaremos la clase `RequestDispatcher` que esta dentro del paquete `javax.servlet`:
+
+```java
+import javax.servlet.RequestDispatcher;
+
+import week5.models.User;
+import week5.models.Authentication;
+```
+
+3.- Una vez importadas las clases necesarias dentro de nuestro controlador `LoginController`, construiremos las siguiente lógica en el método `processRequest`:
+
+- Recuperar los valores enviados por el cliente, descrito en la Actividad 2.
+- Invocar el método `authenticate` de la clase `Authentication`, descrito en la Actividad 3. Enviaremos la información de los valores obtenidos del `request`.
 - Si el método `authenticate` devuelve `true` se deberá construir una instancia del modelo `User` y enviar un valor a la página `login.jsp`. Si el método devuelve `false` deberá redireccionar a la página `error.jsp`.
 - El código siguiente muestra el ejemplo del método `processRequest`:
 
@@ -166,7 +177,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 }
 ```
 
-2.- Una vez creada la lógica del controlador, ajustaremos la vista `success.jsp`. A continuación se muestra el código de ejemplo:
+4.- Una vez creada la lógica del `LoginController`, ajustaremos la vista `success.jsp`. A continuación se muestra el código de ejemplo:
 
 ```html
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -184,3 +195,23 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     </body>
 </html>
 ```
+
+## Actividad 5 - Prueba de la aplicación
+
+### Primer prueba
+1.- Ejecutar el proyecto y acceder a la url http://localhost:8080/week5/login.jsp
+2.- Teclear el usuario y contraseña. Estos valores deberán coincidir con los descritos en la Actividad 2, las variables dummy.
+3.- Dar clic en el botón Iniciar Sesión y validar que envía a la página de `succes.jsp` y además nos muestra un saludo con nuestro nombre.
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/09.png" width="300" />
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/10.png" width="300" />
+
+### Segunda prueba
+
+1.- Volver a ejecutar la página `login.jsp`.
+2.- Teclear un usurio y contraseña incorrectos, es decir, que no coincidan con los descritos en las variables dummy.
+3.- Dar clic en el botón Iniciar Sesión y validar que envía a la página de `error.jsp`.
+4.- Probar el enlace "Regresar" y validar que reedirecciona hacia `login.jsp`
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/11.png" width="300" />
