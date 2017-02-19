@@ -101,6 +101,8 @@ public class Authentication {
 
     public static boolean authenticate(String username, String password) {
 
+        //Variables dummy.
+        //Se hardcodean los valores "Miguel" y "MiPassword" para emular que se obtuvieron de una base de datos
         String userDataBase = "Miguel";
         String passwordDataBase = "MiPassword";
 
@@ -115,6 +117,11 @@ public class Authentication {
     }
 }
 ```
+
+Al finalizar las actividades anteriores, se deberá tener una estructura del proyecto como aparece en la siguiente imagen:
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/08.png" width="300" />
+
 
 ## Actividad 4 - Refactorizacion de controladores y vistas.
 
