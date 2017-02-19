@@ -88,3 +88,6 @@ public class User {
 }
 ```
 
+3.- Crear una segunda clase `Authentication` la cual deberá contener lo siguiente:
+- Un método estático de nombre `authenticate` que devuelva un tipo `boolean` el cual nos indicará si el usuario debió o no autenticarse.
+- En el método `authenticate` definiremos dos variables de tipo `String`: `userDataBase` y `passwordDataBase` que actuarán como información dummy
