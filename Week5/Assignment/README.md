@@ -26,11 +26,23 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/01.png" width="300" />
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/02.png" width="300" />
 
-4.- La página `login.jsp` deberá contener un formulario como el que aparece en la imagen la imagen inferior. El formulario deberá ejecutar una accion `LoginController` el cuál será un servlet que se desarrollará en la siguiente actividad. Además, el formulario deberá enviar los datos mediante el método de transferencia `POST`.
+4.- La página `login.jsp` deberá contener lo siguiente:
 
+ - Un título `h1` con un mensaje de bienvenida.
+ - Un formulario. 
+ - El formulario deberá ejecutar una accion `LoginController` el cuál será un servlet que se desarrollará en la siguiente actividad. 
+ - El formulario deberá enviar los datos mediante el método de transferencia `POST`. 
+ - El formulario deberá contener tres `input`: uno de tipo `text`, el segundo de tipo `password` y el tercero de tipo `submit` con el valor `Iniciar sesión`.
+ 
+ Deberá ser muy similar al formulario de la siguiente imagen:
+ 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/03.png" width="300" />
 
-5.- La página `error.jsp` y `success.jsp` se modificará en las actividades posteriores.
+5.- La página `error.jsp` deberá contener un título `h1` con el contenido `Usuario o contraseña incorrectos`. Además un enlace `a` con el atributo `href` para reedireccionar hacia `login.jsp`.
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/03_1.png" width="300" />
+
+6.- La página `success.jsp` se modificará en las actividades posteriores.
 
 ### Actividad 2
 
@@ -42,6 +54,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/05.png" width="300" />
 
+3.- Dentro del servlet se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`.
 
 
 # Desc. en proceso
