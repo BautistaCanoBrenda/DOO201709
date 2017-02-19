@@ -210,7 +210,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/09.png" width="300" />
 
-<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/10.png" width="300" />
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/10.png" width="300" style="border: 1px solid #ccc" />
 
 ### Segunda prueba
 
