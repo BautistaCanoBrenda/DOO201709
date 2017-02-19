@@ -18,9 +18,9 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 ### Actividad 1 - Construcción de vistas
 
-1.- Crear un proyecto de tipo `Java Web` en NetBeans.
-2.- Elimina el archivo `index.html` que crea por defecto dentro de la carpeta `Web Pages`.
-3.- Agrega tres archivos de tipo JSP: `login.jsp`, `success.jsp` y `error.jsp`.
+- Crear un proyecto de tipo `Java Web` en NetBeans.
+- Elimina el archivo `index.html` que crea por defecto dentro de la carpeta `Web Pages`.
+- Agrega tres archivos de tipo JSP: `login.jsp`, `success.jsp` y `error.jsp`.
 
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/01.png" width="300" />
