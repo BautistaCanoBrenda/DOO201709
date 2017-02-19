@@ -16,7 +16,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 - Crear un servlet que funcionará como `Controller`.
 - Crear dos clases de Java que funcionarán como `Model`.
 
-### Actividad 1
+### Actividad 1 - Construcción de vistas
 
 1.- Crear un proyecto de tipo `Java Web` en NetBeans.
 2.- Elimina el archivo `index.html` que crea por defecto dentro de la carpeta `Web Pages`.
@@ -24,18 +24,19 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/01.png" width="300" />
+
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/02.png" width="300" />
 
 4.- La página `login.jsp` deberá contener lo siguiente:
 
  - Un título `h1` con un mensaje de bienvenida.
- - Un formulario. 
- - El formulario deberá ejecutar una accion `LoginController` el cuál será un servlet que se desarrollará en la siguiente actividad. 
- - El formulario deberá enviar los datos mediante el método de transferencia `POST`. 
+ - Un formulario.
+ - El formulario deberá ejecutar una accion `LoginController` el cuál será un servlet que se desarrollará en la siguiente actividad.
+ - El formulario deberá enviar los datos mediante el método de transferencia `POST`.
  - El formulario deberá contener tres `input`: uno de tipo `text`, el segundo de tipo `password` y el tercero de tipo `submit` con el valor `Iniciar sesión`.
- 
+
  Deberá ser muy similar al formulario de la siguiente imagen:
- 
+
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/03.png" width="300" />
 
 5.- La página `error.jsp` deberá contener un título `h1` con el contenido `Usuario o contraseña incorrectos`. Además un enlace `a` con el atributo `href` para reedireccionar hacia `login.jsp`.
@@ -44,7 +45,7 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 6.- La página `success.jsp` se modificará en las actividades posteriores.
 
-### Actividad 2
+### Actividad 2 - Construcción de controladores
 
 1.- Crear un servlet de nombre `LoginController`. Durante la creación del servlet deberá especificarse que sea creado dentro del paquete `week5.controllers`.
 
@@ -56,11 +57,12 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 
 3.- Dentro del servlet se deberá obtener los parámetros enviados por el cliente (usuario y contraseña) haciendo uso del método `request.getParameter`. El resto del código del servlet, se definirá en las siguientes actividades.
 
-### Actividad 3
+### Actividad 3 - Contruccion de modelo
 
 1.- Crear una clase de Java de nombre `User` que funcionará como modelo. La clase deberá estar dentro de un nuevo paquete de nombre `week5.models`, como aparece en la siguiente imagen:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/06.png" width="300" />
+
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/07.png" width="300" />
 
 2.- La clase `User` deberá contener lo siguiente:
@@ -73,16 +75,16 @@ Crear una mini-aplicación web que funcione con el patrón MVC:
 package week5.models;
 
 public class User {
-   
+
     private String username;
     private String password;
-    
-    public User(String username, String password) { 
+
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
-    
-    public String getUsername() { 
+
+    public String getUsername() {
         return this.username;
     }
 }
@@ -90,4 +92,88 @@ public class User {
 
 3.- Crear una segunda clase `Authentication` la cual deberá contener lo siguiente:
 - Un método estático de nombre `authenticate` que devuelva un tipo `boolean` el cual nos indicará si el usuario debió o no autenticarse.
-- En el método `authenticate` definiremos dos variables de tipo `String`: `userDataBase` y `passwordDataBase` que actuarán como información dummy
+- En el método `authenticate` definiremos dos variables de tipo `String`: `userDataBase` y `passwordDataBase` que actuarán como información dummy, es decir, información falsa y *hardcoded* para emular que obtuvimos esa información de la base de datos. Esta información dummy, nos servirá para comparar la información de "la base de datos" contra lo que capturó el usuario.
+- La validación la realizaremos a través del método `equals`.
+- El código siguiente muestra el ejemplo:
+
+```java
+public class Authentication {
+
+    public static boolean authenticate(String username, String password) {
+
+        String userDataBase = "Miguel";
+        String passwordDataBase = "MiPassword";
+
+        //username.equals(userDataBase) realiza una comparación entre las cadenas username y userDataBase
+        //Si son iguales devuelve true. Si son diferentes devuelve false.
+        if(username.equals(userDataBase) && password.equals(passwordDataBase)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+```
+
+### Actividad 4 - Refactorizacion de controladores y vistas.
+
+1.- Una vez con las vistas, el servlet y las clases modelo. Podemos continuar el código de nuestro controlador (servlet). En el controlador construiremos las siguiente lógica:
+
+- Recuperar los valores enviados por el cliente (descrito en la actividad 2)
+- Invocar el método `authenticate` de la clase `Authentication`, enviando la información de los valores del request.
+- Si el método `authenticate` devuelve `true` se deberá construir una instancia del modelo `User` y enviar un valor a la página `login.jsp`. Si el método devuelve `false` deberá redireccionar a la página `error.jsp`.
+- El código siguiente muestra el ejemplo del método `processRequest`:
+
+```java
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+    //RequestDispatcher será la clase que nos apoyará a devolver
+    //el valor hacia la vista
+    RequestDispatcher dispatcher = null;
+
+    //Se recupera la información del request
+    String txtUsername = request.getParameter("txt-username");
+    String txtPassword = request.getParameter("txt-password");
+
+    //Invoca al método authenticate para validar el usuario
+    boolean isValidUser =  Authentication.authenticate(txtUsername, txtPassword);
+
+    if(isValidUser) {
+
+        //Construye instancia del modelo User
+        User user = new User(txtUsername, txtPassword);
+
+        //Construye parámetro para enviar a la vista success.jsp
+        request.setAttribute("username", user.getUsername());
+
+        //Se define a donde se enviará el objeto request y response.
+        dispatcher = request.getRequestDispatcher("success.jsp");
+        dispatcher.forward(request, response);
+    }
+    else {
+        //Si el usuario es inválido, reedireccionamos la petición hacia error.jsp
+        response.sendRedirect("error.jsp");
+    }
+}
+```
+
+2.- Una vez creada la lógica del controlador, ajustaremos la vista `success.jsp`. A continuación se muestra el código de ejemplo:
+
+```html
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Inicio de sesión válido</title>
+    </head>
+    <body>
+
+        <h1>Inicio de sesión válido</h1>
+
+        <h2>Hola <%= request.getAttribute("username") %></h2>
+    </body>
+</html>
+```
