@@ -141,6 +141,11 @@ Las acciones de JSP utilizan el constructor en sintaxin de XML para controlar el
 - `jsp:setProperty`: Establece una propiedad de un JavaBean.
 - `jsp:getProperty`: Obtiene la propiedad de un JavaBean.
 - `jsp:forward`. Redirecciona la petición a una nueva página.
+
+-==========-
+
+## Acciones de JSP
+
 - `jsp:plugin`: Genera codigo específico para el navegador que produce una etiqueta `OBJECT` o `EMBED` para un plugin de Java.
 - `jsp:element`: Define elementos XML dinámicamente.
 - `jsp:attribute`: Define atributs de un elemento XML.
@@ -158,11 +163,18 @@ JSP define un nueve variables de manera automática que están disponibles para 
 - `out`: Objeto PrintWriter para imprimir en la respuesta del cliente.
 - `session`: Objeto de tipo HttpSession asociado con la petición del cliente.
 - `application`: Objeto de tipo ServletContext asociado con el contexto de la aplicación.
+
+
+-==========-
+
+## Objetos implícitos en JSP
+
+JSP define un nueve variables de manera automática que están disponibles para su uso.
+
 - `config`: Objeto de tipo ServletConfig asociado con la página.
 - `pageContext`: Este objeto encapsula funcionalidades específicas del servidor como JspWriters.
 - `page`: Alias o sinónimo del objeto `this`. Se utiliza para invocar métodos en el servlet.
 - `Exception`: Objeto de tipo Exception para proveer funcionalidad de datos de excepción.
-
 
 -==========-
 
