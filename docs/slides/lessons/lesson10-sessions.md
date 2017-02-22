@@ -124,15 +124,11 @@ Los siguientes, es un resumen de métodos importantes para el manejo de sesiones
 
 -==========-
 
-## Sesiones - Ejemplo
-
 <div class="image">
   <img class="no-border" data-src="img/10-01.png"/>
 </div>
 
 -==========-
-
-## Sesiones - Ejemplo
 
 <div class="image">
   <img class="no-border" data-src="img/10-02.png"/>
