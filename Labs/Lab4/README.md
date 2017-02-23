@@ -70,7 +70,7 @@ La página de `login.jsp` deberá ser tener un aspecto muy similar al de la sigu
 2.- La clase `User` deberá contener lo siguiente:
 - Dos propiedades privadas de tipo `String`: `username` y `password`.
 - Un constructor que reciba como parámetro de entrada dos `String`. El primero representará el usuario y el segundo la contraseña. En el cuerpo del constructor deberá establecer el valor de los parámetros de entrada hacia las propiedades privadas `username` y `password`.
-- Un método de nombre `getUsername` que devolverá un `String`, es decir, el valor de `username`.
+- Un método de nombre `getUsername` que devolverá un `String`, es decir, el valor de la variable privada `username`.
 
 3.- Crear una segunda clase `Authentication`, dentro del mismo paquete `week5.models`, la cual deberá contener lo siguiente:
 - Un método estático de nombre `authenticate` que devuelva un tipo `boolean`, el cual nos indicará si el usuario debió o no autenticarse.
