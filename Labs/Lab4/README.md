@@ -223,3 +223,18 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 4.- Probar el enlace "Regresar" y validar que reedirecciona hacia `login.jsp`.
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week5-img/11.png" width="300" />
+
+# Preguntas
+
+- ¿Qué ventajas tienes al usar un patrón MVC en lugar de que un Servlet realice todo?
+- Si quisieras agregar más vistas, ¿Qué cambios tendrías que hacer?
+- Si requiriéramos más funcionalidades y no solamente un login de acceso, ¿Crees que un solo servlet o una sola clase de modelo serían suficientes?
+- Crea un diagrama para este ejemplo basado en el diagrama habitual de MVC.
+
+# Especificaciones del Reporte
+
+- El reporte debe incluir una portada con tus datos al inicio.
+- El reporte debe contener la descripción de los pasos realizados para llevar a cabo la práctica del laboratorio. Cada paso debe contar con un fragmento de código o imagen que ilustre lo descrito. Piense en el reporte como una explicación para alguien ajeno al tema y detalle los puntos técnicos que sean necesarios.
+- Contesta las preguntas mencionadas en la sección anterior.
+- Comprime en un archivo `.zip` el directorio raíz de la práctica.
+- El envío de la práctica debe incluir dos archivos: El reporte en `PDF` y el archivo `.zip` con el código fuente del proyecto.
