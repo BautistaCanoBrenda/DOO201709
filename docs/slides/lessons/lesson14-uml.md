@@ -19,3 +19,18 @@ Objetivos de UML:
 - Diagramas para perfiles como: desarrolladores, analistas, empresarios, administradores de procesos, etc.
 - Acompañar a los procesos para volverlos claros.
 - Mecanismo visual para el modelado de todos los sistemas prácticos posibles en entornos complejos.
+
+-==========-
+
+## Tipos de diagramas
+
+En UML los tipos de diagramas se clasifican en:
+
+- Diagramas estructurales
+- Diagramas de comportamiento
+
+-==========-
+
+<div class="image">
+  <img class="no-border" data-src="img/15-01.png"/>
+</div>
