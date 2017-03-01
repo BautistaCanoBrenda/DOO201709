@@ -98,3 +98,7 @@ Este timpo de diagramas se utiliza principalmente para desarrollos basados en co
 -==========-
 
 ## Diagrama de componentes
+
+<div class="image">
+  <img class="no-border" data-src="img/15-06.png"/>
+</div>
