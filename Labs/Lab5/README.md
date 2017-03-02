@@ -9,7 +9,7 @@ La descripción de este laboratorio parte del supuesto que ya se cuenta con la v
 
 ## Actividades
 
-En este laboratorio se realizará una mini-aplicación web que funcione con el patrón MVC y haga uso de sesiones. El objetivo es construir un login sensillo y almacenar la información del usuario en variables de sesión.
+En este laboratorio se realizará una mini-aplicación web que funcione con el patrón MVC y haga uso de sesiones. El objetivo es construir un login sencillo y almacenar la información del usuario en variables de sesión.
 
 ## Actividad 1 - Ajuste de proyecto de Laboratorio 4
 
@@ -20,7 +20,7 @@ En este laboratorio se realizará una mini-aplicación web que funcione con el p
 3.- Utiliza los archivos del `Laboratorio4`: 
  - Copia y pega los archivos `login.jsp` y `error.jsp` del proyecto `Laboratorio4`. 
  - Crea un nuevo servlet de nombre `LoginController` dentro del paquete `Laboratorio5.controllers` y agrega el código del controlador del `Laboratorio4`. En este punto, asegúrate de que se ha creado tu archivo `web.xml` dentro de la carpeta `WEB-INF`.
- - De la misma manera que el punto anterior, utiliza los modelos creados en el proyecto `Laboratorio4`.
+ - De la misma manera que el punto anterior, utiliza los modelos creados en el proyecto `Laboratorio4`. No olvides crear el paquete de los modelos.
 
 4.- Agrega un nuevo archivo de nombre `profile.jsp` dentro de `Web Pages`.
 
@@ -29,11 +29,12 @@ En este laboratorio se realizará una mini-aplicación web que funcione con el p
 El modelo `User` original contiene dos propiedades `username` y `password`. Deberás realizar los siguientes cambios: 
 - Agregar una nueva propiedad `Nombre` de tipo `String` y privada.
 - Agregar una nueva propiedad `Apellidos` de tipo `String` y privada.
-- Crear un tres métodos: `String getName()`, `String getLastName()` y `String getFullName()`. Estos métodos deberán devolver el nombre, apellidos y el nombre completo (nombre + apellidos). El método `getFullName()` deberá hacer uso de los dos primeros métodos para su funcionamiento.
+- Ambas propiedades tendrán información `dummy` como se creó en el `Laboratorio4`.
+- Crear tres métodos: `String getName()`, `String getLastName()` y `String getFullName()`. Estos métodos deberán devolver el nombre, apellidos y el nombre completo (nombre + apellidos). El método `getFullName()` deberá hacer uso de los dos primeros métodos para su funcionamiento.
 
 ## Actividad 3 - Modificación de controlador
 
-El controlador `LoginController` original, en su método `proceessRequest`, realizaba una validación del usuario. De ser correcta, enviaba a la página `success.jsp`; de ser falsa, enviaba a `error.jsp`. Lo anterior se realizaba mediante el objeto `RequestDispatcher`. Para esta actividad lo dejaremos de utilizar:
+El controlador `LoginController` original, en su método `processRequest`, realizaba una validación del usuario. De ser correcta, enviaba a la página `success.jsp`; de ser falsa, enviaba a `error.jsp`. Lo anterior se realizaba mediante el objeto `RequestDispatcher`. Para esta actividad lo dejaremos de utilizar e incluiremos nuevo código para el trabajo de sesiones:
 
 ```java
 protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -51,7 +52,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
       if(isValidUser) {
           User user = new User(txtUsername, txtPassword);
 
-          //Establecemos una nueva variable de sesion
+          //Establecemos variables de sesión
           session.setAttribute("username", user.getUsername());
           session.setAttribute("name", user.getName());
           session.setAttribute("fullname", user.getFullName());
@@ -69,8 +70,8 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 
 La página `profile.jsp` deberá aparentar el perfil del usuario que está iniciando sesión.
 - Deberá mostrar un mensaje de bienvenida al usuario similar a la página `success.jsp` del `Laboratorio4`. 
-- Además debemos agregar elementos de HTML para mostrar el nombre completo y el usuario.
-- Validaremos la sesión del usuario al iniciar la página. Supongamos que alguien intenta tener acceso directamente a esta página teclenado la url. Se deberá validar que puede entrar a la página si su sesión ya esta creada.
+- Además, debemos agregar elementos de HTML para mostrar el nombre completo y el usuario.
+- Validaremos la sesión del usuario al iniciar la página. Supongamos que alguien intenta tener acceso directamente a esta página tecleando en la url. Se deberá validar que puede entrar a la página si su sesión ya esta creada.
 
 ```
 <%
@@ -93,9 +94,9 @@ La página `profile.jsp` deberá aparentar el perfil del usuario que está inici
 
 ## Actividad 5 - Modificación de vista Login.
 
-Supongamos que alguien ya inició sesión. Si entrara de nuevo a la página de login ¿Tiene sentido pedir nuevamente las credenciales? *Of course, not my friend*.
+Supongamos que alguien ya inició sesión, si entrara de nuevo a la página de login ¿Tiene sentido pedir nuevamente las credenciales? *Of course, not my friend*.
 
-- Validar mediante la sesión si debe o no presentarse el `login.jsp`.
+- Validar mediante la sesión si debe o no presentarse el formulario de `login.jsp`.
 
 ```java
 <%
@@ -103,6 +104,14 @@ Supongamos que alguien ya inició sesión. Si entrara de nuevo a la página de l
         response.sendRedirect("success.jsp");
 %>
 ```
+
+# Pruebas
+
+Realiza las pruebas para todos los escenarios.
+- Inicio de sesión inválido (usuario o password erróneo)
+- Inicio válido (usuario o password correctos)
+- Entrar directamente a profile.jsp con sesión y sin sesión.
+- Entrar directamente a login.jsp con sesión y sin sesión. 
 
 # Preguntas
 - ¿Identificas alguna ventaja de usar sesiones en comparación al Laboratorio 4? ¿Cuáles?
