@@ -32,5 +32,5 @@ En UML los tipos de diagramas se clasifican en:
 -==========-
 
 <div class="image">
-  <img class="no-border" data-src="img/15-01.png"/>
+  <img class="no-border" data-src="img/14-01.png"/>
 </div>
