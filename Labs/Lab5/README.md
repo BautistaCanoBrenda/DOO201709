@@ -101,7 +101,7 @@ Supongamos que alguien ya inició sesión, si entrara de nuevo a la página de l
 ```java
 <%
     if(session.getAttribute("username") != null)
-        response.sendRedirect("success.jsp");
+        response.sendRedirect("profile.jsp");
 %>
 ```
 
