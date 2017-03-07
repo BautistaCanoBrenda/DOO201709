@@ -193,3 +193,30 @@ public static boolean setUser(String name, String lastName, String username, Str
 
 - Validar la información introducida por el usuario en `login.jsp`. Deberá llamar el método `Authentication.isValid(username:String, password:String)` para este fin.
 - En caso de ser válido, deberá obtener la información restante del usuario mediante `Database.getUserByUsername(username:String):User`
+- Construir una variable de sesión para almacenar el `username`.
+- Utilizar un objeto de tipo `RequestDispatcher` para enviar variables de "error" hacia las vistas. Ejemplo:
+
+```java
+RequestDispatcher dispatcher = request.getRequestDispatcher("pagina.jsp");
+dispatcher.forward(request, response);
+```
+
+2.- Crear un controlador con nombre `LogoutController`. El cual se encargará de las siguientes tareas:
+
+- Terminar la sesión del usuario.
+- Reedireccionar hacia `login.jsp`. Ejemplo:
+
+```java
+HttpSession session = request.getSession();
+session.invalidate();
+response.sendRedirect("login.jsp");
+```
+
+3.- Crear un controlador de nombre `RegisterController`. El cual se encargará de las siguientes tareas:
+
+- Validar que la información introducida no se encuentre vacía. Puede utilizarse el método `String.isEmpty()`
+- Hacer uso de un objeto `RequestDispatcher` para enviar variables de error hacia las vistas.
+- Registrar los datos mediante el método `Database.setUser(name:String, lastName:String, userName:String, password:String);`
+- En caso de ser correcto el proceso, deberá enviar hacia `login.jsp` con el mensaje de éxito. En caso de ser incorrecto, deberá volver hacia `register.jsp` con el mensaje de error.
+
+4.- Crear un controlador de nombre `ProfileController`
