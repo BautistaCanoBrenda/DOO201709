@@ -61,14 +61,89 @@ Se deberá ubicar la ruta donde se encuentra el archivo:
 
 La lógica de cada método se describe a continuación:
 
-- `getPathDatabase():String`: Devuelve la ruta donde se encontrar
+- `getPathDatabase():String`: Devuelve la ruta donde se encontrará el archivo `JSON`. Ejemplo:
+
+```java
+private static String getPathDatabase() {
+    return "ruta/de/archivo.json";
+}
+```
+
+- `setJsonObject(name:String, lastName:String, username:String, password:String):boolean`: Devuelve `true|false` en función si se creó o no el usuario en el archivo `JSON`. Ejemplo:
+
+```java
+private static boolean setJsonObject(String valorPropiedad) {
+     JSONObject obj = new JSONObject();
+
+	//Solo guarda un valor
+    obj.put("NombrePropiedad", valorPropiedad);
+
+	String rutaJson = getPathDatabase(); //llamada a método anterior
+
+    try (FileWriter file = new FileWriter(rutaJson)) {
+            file.write(obj.toJSONString());
+
+            return true;
+    }
+    catch(IOException ioext) {
+        return false;
+    }
+}
+```
+
+- `getJsonObject():JSONObject`: Devuelve un objeto de tipo JSONObject con la información almacenada en el archivo `JSON`. Ejemplo:
+
+```java
+private static JSONObject getJsonObject() {
+
+        try {
+			String rutaJson = getPathDatabase();
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(new FileReader(rutaJson));
+
+            JSONObject jsonObject =  (JSONObject) obj;
+
+            return jsonObject;
+        }
+        catch(IOException ioext) {
+            return null;
+        }
+        catch(ParseException pext) {
+            return null;
+        }
+    }
+```
+
+- `getUserByUsername(username:String):User`: Devuelve un objeto de tipo `User` con la información del archivo `JSON`.
+
+```java
+public static User getUserByUsername(String username) {
+    User user;
+
+    JSONObject jsonObject = getJsonObject(); //llama a método anterior
+
+    if(jsonObject != null) {
+        String propiedadDb = (String) jsonObject.get("NombrePropiedad");
+
+		//Valida si el usuario que se pide es igual al que se encuentra
+		//en el archivo JSON
+        if(username.equals(propiedadDb)) {
+            user = new User(propiedadDb); //Completar con todas las propiedades del usuario
+        }
+        else {
+            user = null;
+        }
+
+        return user;
+    }
+    else{
+        return null;
+    }
+}
+```
+
+
 
 2.- Agregar una nueva clase de nombre `Authenticate` con la siguiente estructura:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/05.png" width="300" />
-
-
-
-
-
-## Referencias
