@@ -142,8 +142,54 @@ public static User getUserByUsername(String username) {
 }
 ```
 
+- `getUserByUsernamePassword(username:String, password:String):User`: Devuelve un objeto de tipo `User` con la información del archivo `JSON`. Ejemplo:
+
+```java
+public static User getUserByUsernamePassword(String username, String password){
+    User user;
+
+    JSONObject jsonObject = getJsonObject(); //Llamáda a método
+
+    if(jsonObject != null) {
+        String propiedadDb = (String) jsonObject.get("Propiedad");
+
+		//Validar password y usuario
+		//passwordDb no existe en este contexto. Usar el ejemplo de propiedadDb
+        if(username.equals(propiedadDb) && password.equals(passwordDb)) {
+            user = new User(propiedadDb); //Completar con propiedades para construir objeto
+        }
+        else {
+            user = null;
+        }
+
+        return user;
+    }
+    else{
+        return null;
+    }
+}
+```
+
+- `setUser(name:String, lastName:String, username:String, password:String):boolean`: Devuelve `true|false` en caso de crearse o no, el usuario. Ejemplo:
+
+```java
+public static boolean setUser(String name, String lastName, String username, String password) {
+
+	boolean isSetup = setJsonObject(name, lastName, username, password);
+
+	return isSetup;
+}
+```
 
 
 2.- Agregar una nueva clase de nombre `Authenticate` con la siguiente estructura:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/05.png" width="300" />
+
+
+## Actividad 5: Construcción de controladores
+
+1.- Crear un controlador con nombre `LoginController`. El cual se encargará de las siguientes tareas:
+
+- Validar la información introducida por el usuario en `login.jsp`. Deberá llamar el método `Authentication.isValid(username:String, password:String)` para este fin.
+- En caso de ser válido, deberá obtener la información restante del usuario mediante `Database.getUserByUsername(username:String):User`
