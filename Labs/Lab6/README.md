@@ -39,4 +39,60 @@ response.sendRedirect("login.jsp");
 
 EL objetivo de esta actividad es proveerle al usuario un mecanismo para "recordar" su color favorito como color de fondo de su perfil.
 
-1.- Dentro del archivo `profile.jsp`
+
+1.- Dentro de perfil.jsp deberá construir un elemento select para modificar el color del fondo de pantalla. Agregar mínimo tres colores.
+2.- Agregar un botón "Guardar" que ejecute una petición POST hacia ProfileController.
+3.- Crear un nuevo servlet de nombre ProfileController. Este servlet actuará como controlador para manejar la solicitud del POST enviado por el cliente. El servlet, deberá construir una cookie de nombre "color" y con el valor del color a modificar (Ej. "red", "blue", "green", etc). Ejemplo:
+
+```java
+ //El valor red solo es ejemplo. Debe obtenerse del valor del campo select enviado por el POST
+String color = "red";
+Cookie cookie = new Cookie("color", color);
+response.addCookie(cookie);
+response.sendRedirect("profile.jsp");
+```
+
+4.- Al regresar la respuesta del servidor hacia el cliente, la página profile.jsp deberá buscar la cookie para asignarla al elemento body del HTML. Ejemplo:
+
+```java
+<%
+String color = "";
+Cookie[] cookies = request.getCookies();
+for(Cookie c : cookies) { 
+  if(c.getName().equals("color")) { 
+    color = c.getValue();
+  }
+}
+%>
+<html>
+  <head>....</head>
+  <body style="background-color: <%= color %>;">
+  ....
+  </body>
+</html>
+```
+
+ # Pruebas
+
+Realiza las pruebas para todos los escenarios.
+- Inicio de sesión inválido (usuario o password erróneo)
+- Inicio válido (usuario o password correctos)
+- Entrar directamente a profile.jsp con sesión y sin sesión.
+- Entrar directamente a login.jsp con sesión y sin sesión.
+- Entrar a profile.jsp y elegir un color. 
+- Cerrar sesión, volver a inciar sesión y validar que el fondo de la página sea el color elegido en el punto anterior.
+
+# Preguntas
+- ¿Qué ventajas tienes al hacer manejo de cookies en la aplicación Web?
+- ¿Qué problemas potenciales pueden presentarse al manejar las cookies?
+- ¿Como funciona el for(Cookie c : cookies) y para que se utiliza su if interno?
+- ¿Sería conveniente almacenar el valor del color en una sesión?
+- ¿Sería conveniente almacenar el nombre de usuario en una cookie?
+
+# Especificaciones del Reporte
+
+- El reporte debe incluir una portada con tus datos al inicio.
+- El reporte debe contener la descripción de los pasos realizados para llevar a cabo la práctica del laboratorio. Cada paso debe contar con un fragmento de código o imagen que ilustre lo descrito. Piense en el reporte como una explicación para alguien ajeno al tema y detalle los puntos técnicos que sean necesarios.
+- Contesta las preguntas mencionadas en la sección anterior.
+- Comprime en un archivo `.zip` el directorio raíz de la práctica.
+- El envío de la práctica debe incluir dos archivos: El reporte en `PDF` y el archivo `.zip` con el código fuente del proyecto.
