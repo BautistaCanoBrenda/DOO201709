@@ -9,7 +9,7 @@ La descripción de este laboratorio parte del supuesto que ya se cuenta con la v
 
 ## Actividades
 
-En este laboratorio se realizará una mini-aplicación web que funcione con el patrón MVC y haga uso de sesiones. El objetivo es construir un login sencillo y almacenar la información del usuario en variables de sesión y un color de fondo del perfil de usuario en una cookie.
+En este laboratorio se realizará una mini-aplicación web que funcione con el patrón MVC y haga uso de sesiones y cookies. El objetivo es construir un login sencillo y almacenar la información del usuario en variables de sesión y un color de fondo del perfil de usuario en una cookie.
 
 ## Actividad 1 - Ajuste de proyecto de Laboratorio 5
 
