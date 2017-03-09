@@ -17,11 +17,11 @@ En este laboratorio se realizará una mini-aplicación web que funcione con el p
 
 2.- Elimina el archivo `index.html` que crea por defecto NetBeans y que se encuentra dentro de la carpeta Web Pages.
 
-3.- Utiliza los archivos del `Laboratorio4`.
+3.- Utiliza los archivos del `Laboratorio5`.
 
 ## Actividad 2 - Cierre de sesión
 
-Para completar el flujo del `Laboratorio4` deberemos construir un mecanismo para cerrar la sesión del usuario.
+Para completar el flujo del `Laboratorio5` deberemos construir un mecanismo para cerrar la sesión del usuario.
 
 1.- Crea un nuevo servlet de nombre `LogoutController`.
 
