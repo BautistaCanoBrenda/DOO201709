@@ -23,8 +23,10 @@ En este laboratorio se realizará una mini-aplicación web que funcione con el p
 
 Para completar el flujo del `Laboratorio4` deberemos construir un mecanismo para cerrar la sesión del usuario.
 
-1.- Crea un nuevo servlet de nombre `LogoutController`
+1.- Crea un nuevo servlet de nombre `LogoutController`.
+
 2.- Agrega un enlace al final del archivo `profile.jsp` con la propiedad `href` apuntando hacia `LogoutController` y el texto `Cerrar sesión`.
+
 3.- El controlador `LogoutController` deberá invalidar la sesión como sigue:
 
 ```java
@@ -40,9 +42,11 @@ response.sendRedirect("login.jsp");
 EL objetivo de esta actividad es proveerle al usuario un mecanismo para "recordar" su color favorito como color de fondo de su perfil.
 
 
-1.- Dentro de perfil.jsp deberá construir un elemento select para modificar el color del fondo de pantalla. Agregar mínimo tres colores.
-2.- Agregar un botón "Guardar" que ejecute una petición POST hacia ProfileController.
-3.- Crear un nuevo servlet de nombre ProfileController. Este servlet actuará como controlador para manejar la solicitud del POST enviado por el cliente. El servlet, deberá construir una cookie de nombre "color" y con el valor del color a modificar (Ej. "red", "blue", "green", etc). Ejemplo:
+1.- Dentro de `perfil.jsp` deberá construir un elemento `select` para modificar el color del fondo de pantalla. Agregar mínimo tres colores.
+
+2.- Agregar un botón "Guardar" que ejecute una petición `POST` hacia `ProfileController`, que crearemos en el siguiente punto.
+
+3.- Crear un nuevo servlet de nombre `ProfileController`. Este servlet actuará como controlador para manejar la solicitud `POST` enviada por el cliente. El servlet, deberá construir una cookie de nombre "color" y con el valor del color a modificar (Ej. "red", "blue", "green", etc). Ejemplo:
 
 ```java
  //El valor red solo es ejemplo. Debe obtenerse del valor del campo select enviado por el POST
@@ -52,7 +56,7 @@ response.addCookie(cookie);
 response.sendRedirect("profile.jsp");
 ```
 
-4.- Al regresar la respuesta del servidor hacia el cliente, la página profile.jsp deberá buscar la cookie para asignarla al elemento body del HTML. Ejemplo:
+4.- Al regresar la respuesta del servidor hacia el cliente, la página `profile.jsp` deberá buscar la cookie para asignar su valor a la regla de estilo `background-color` de la propiedad `style` del elemento `body` del `HTML`. Ejemplo:
 
 ```java
 <%
@@ -72,7 +76,7 @@ for(Cookie c : cookies) {
 </html>
 ```
 
- # Pruebas
+# Pruebas
 
 Realiza las pruebas para todos los escenarios.
 - Inicio de sesión inválido (usuario o password erróneo)
@@ -80,12 +84,12 @@ Realiza las pruebas para todos los escenarios.
 - Entrar directamente a profile.jsp con sesión y sin sesión.
 - Entrar directamente a login.jsp con sesión y sin sesión.
 - Entrar a profile.jsp y elegir un color. 
-- Cerrar sesión, volver a inciar sesión y validar que el fondo de la página sea el color elegido en el punto anterior.
+- Cerrar sesión, volver a iniciar sesión y validar que el fondo de la página sea el color elegido en el punto anterior.
 
 # Preguntas
 - ¿Qué ventajas tienes al hacer manejo de cookies en la aplicación Web?
 - ¿Qué problemas potenciales pueden presentarse al manejar las cookies?
-- ¿Como funciona el for(Cookie c : cookies) y para que se utiliza su if interno?
+- ¿Como funciona el `for(Cookie c : cookies)` y para que se utiliza su `if` interno?
 - ¿Sería conveniente almacenar el valor del color en una sesión?
 - ¿Sería conveniente almacenar el nombre de usuario en una cookie?
 
