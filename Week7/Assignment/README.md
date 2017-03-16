@@ -12,8 +12,8 @@ La descripción de esta asignación parte del supuesto que ya se cuenta con la v
 En esta asignación se realizará lo siguiente:
 
 Crear una mini-aplicación web que funcione con el patrón MVC:
-- Crear tres páginas JSP: login.jsp, register.jsp y profile.jsp
-- Crear cuatro servlets que funcionarán como controladores
+- Crear tres páginas JSP: `login.jsp`, `register.jsp` y `profile.jsp`
+- Crear cuatro servlets que funcionarán como controladores: `LoginController`, `LogoutController`, `ProfileController` y `RegisterController`
 - Crear una clase de Java que funcionará como modelo
 - Crear dos clases de servicio para orquestar llamadas a BD y validaciones
 - Crear archivo en formato `JSON` que funcionará como base de datos.
@@ -219,4 +219,47 @@ response.sendRedirect("login.jsp");
 - Registrar los datos mediante el método `Database.setUser(name:String, lastName:String, userName:String, password:String);`
 - En caso de ser correcto el proceso, deberá enviar hacia `login.jsp` con el mensaje de éxito. En caso de ser incorrecto, deberá volver hacia `register.jsp` con el mensaje de error.
 
-4.- Crear un controlador de nombre `ProfileController`
+4.- Crear un controlador de nombre `ProfileController`. Este controlador se encargará de las siguientes tareas:
+
+- Crear una cookie de nombre `color` con el valor seleccionado por el usuario.
+
+## Actividad 6: Construcción de páginas
+
+1.- Crear la página `login.jsp`. Esta página deberá realizar las siguientes tareas:
+
+- Validar si la sesión se encuentra activa. Si la sesión se encuentra activa, deberá redireccionar a `profile.jsp`.
+- Validar si existe un mensaje de éxito por parte de `RegisterController`.
+- El formulario debe encapsular la información del usuario: `username` y `password` dentro de un `form` y enviarlos al controlador `LoginController` para procesar la información como se describe en la Actividad 5. Deberá contener un aspecto como el siguiente:
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/08.png" width="300" />
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/09.png" width="300" />
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/12.png" width="300" />
+
+2.- Puedes incluir/Crear la página `error.jsp` funcionando igual que las asignaciones anteriores. O de otro modo, no utilizar `error.jsp` pero validar el usuario en la misma página de `login.jsp` y mostrar un mensaje en caso de ser un usuario inválido, como se muestra en la siguiente imagen:
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/13.png" width="300" />
+
+3.- Crear la página `register.jsp`. Esta página deberá realizar las siguientes tareas:
+
+- Encapsular dentro de un `form` los elementos `input` y `label` necesarios para proveer al usuario un formulario de captura de la siguiente información: **Nombre**, **Apellidos**, **Usuario** y **Password**
+- Generar un `post` hacia el controlador `RegisterController`, el cual se encargará de procesar la solicitud como se menciona en la Actividad 5.ç
+- Validar si el controlador retorna un mensaje de error. En caso de existir, se deberá mostrar.
+
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/10.png" width="300" />
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/11.png" width="300" />
+
+4.- Crear la página `profile.jsp`. Esta página deberá realizar las siguientes tareas:
+
+- Validar si la sesión se encuentra activa. Si la sesión **no** se encuentra activa, deberá redireccionar a `login.jsp`
+- Mostrar la información del usuario como se muestra en la imagen.
+- Encapsular dentro de un `form`, una lista seleccionable `select` con mínimo tres colores de `css` y un `input` de tipo `submit` para guardar el color preferido.
+- La información del formulario referente al color deberá ser procesada por `ProfileController` como se describe en la Actividad 5.
+- Un enlace para cerrar la sesión. El enlace deberá *apuntar* hacia `LogoutController` mediante la propiedad `href`. Y dentro de `LogoutControllaer` deberá invalidarse la sesión como se describe en la Actividad 5.
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/14.png" width="300" />
+
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week7-img/15.png" width="300" />
