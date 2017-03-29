@@ -24,9 +24,9 @@ Construye una clase con la estructura como se muestra en el siguiente diagrama:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week9-img/01.png" width="200" />
 
-`Log(String fileName)`: Inicializar la propiedad `fileName`.
-`getInstance`: Validar si existe la instancia. De no existir, crear una nueva.
-`write(String message)`: Este método deberá escribir un archivo de texto como sigue:
+- `Log(String fileName)`: Inicializar la propiedad `fileName`.
+- `getInstance`: Validar si existe la instancia. De no existir, crear una nueva.
+- `write(String message)`: Este método deberá escribir un archivo de texto como sigue:
 
 ```java
 try (BufferedWriter br = new BufferedWriter(new FileWriter(logFile, true))) { 
