@@ -12,7 +12,7 @@ En este laboratorio se reconstruirá el escenario del Laboratorio 7. A la práct
 
 ## Actividad 1 - Ajuste de proyecto de Laboratorio 7
 
-1.- Crear un proyecto de tipo Java Web en NetBeans de nombre `Laboratorio9`.
+1.- Crear un proyecto de tipo Java Web en NetBeans de nombre `laboratorio9`.
 
 2.- Elimina el archivo `index.html` que crea por defecto NetBeans y que se encuentra dentro de la carpeta Web Pages.
 
@@ -20,9 +20,11 @@ En este laboratorio se reconstruirá el escenario del Laboratorio 7. A la práct
 
 ## Actividad 2 - Construcción de Singleton
 
-Construye una clase con la estructura como se muestra en el siguiente diagrama:
+Construye la clase `laboratorio9.utils.Log` con la estructura como se muestra en el siguiente diagrama:
 
 <img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week9-img/01.png" width="200" />
+
+*Nota: La propiedad `fileName` es `final` y no `static`.*
 
 - `Log(String fileName)`: Inicializar la propiedad `fileName`.
 - `getInstance`: Validar si existe la instancia. De no existir, crear una nueva.
@@ -43,22 +45,4 @@ try (BufferedWriter br = new BufferedWriter(new FileWriter(logFile, true))) {
 
 Añade la llamada al método write de la clase anterior en todos los catch y finalizaciones de métodos. 
 
-- En cada catch introduce como mensaje el resultado del método `getMessage` del objeto de la excepción. 
-- En cada finalización de los métodos o en cada finalización de `if`, introduce algun mensaje descriptivo relativo a lo que realice el método.
-
-# Pruebas
-
-Realiza las pruebas para todos los escenarios mencionados en el laboratorio 7
-
-# Preguntas
-- ¿Qué ventajas identificas con el uso de un sistema de Logging de eventos?
-- ¿Qué ventajas tienes al utilizar una clase singleton?
-- ¿Qué "pros" y "contras" identificas al utilizar singleton vs clases estáticas?
-
-# Especificaciones del Reporte
-
-- El reporte debe incluir una portada con tus datos al inicio.
-- El reporte debe contener la descripción de los pasos realizados para llevar a cabo la práctica del laboratorio. Cada paso debe contar con un fragmento de código o imagen que ilustre lo descrito. Piense en el reporte como una explicación para alguien ajeno al tema y detalle los puntos técnicos que sean necesarios.
-- Contesta las preguntas mencionadas en la sección anterior.
-- Comprime en un archivo `.zip` el directorio raíz de la práctica.
-- El envío de la práctica debe incluir dos archivos: El reporte en `PDF` y el archivo `.zip` con el código fuente del proyecto.
+- En cada catch introduce como mensaje el resultado de
