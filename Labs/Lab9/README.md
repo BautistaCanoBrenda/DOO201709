@@ -22,14 +22,29 @@ En este laboratorio se reconstruirá el escenario del Laboratorio 7. A la práct
 
 Construye una clase con la estructura como se muestra en el siguiente diagrama:
 
+<img src="https://github.com/migsalazar/DOO201709/blob/master/docs/assets/week9-img/01.png" width="200" />
 
+`Log(String fileName)`: Inicializar la propiedad `fileName`.
+`getInstance`: Validar si existe la instancia. De no existir, crear una nueva.
+`write(String message)`: Este método deberá escribir un archivo de texto como sigue:
 
+```java
+try (BufferedWriter br = new BufferedWriter(new FileWriter(logFile, true))) { 
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Calendar cal = Calendar.getInstance();
 
-
-
+            //Create the name of the file from the path and current time
+            String data = "\n" + dateFormat.format(cal.getTime()) + ": " + message ;
+            br.write(data);
+        }
+```
 
 ## Actividad 3 - Implementación de Logging
 
+Añade la llamada al método write de la clase anterior en todos los catch y finalizaciones de métodos. 
+
+- En cada catch introduce como mensaje el resultado del método `getMessage` del objeto de la excepción. 
+- En cada finalización de los métodos o en cada finalización de `if`, introduce algun mensaje descriptivo relativo a lo que realice el método.
 
 # Pruebas
 
