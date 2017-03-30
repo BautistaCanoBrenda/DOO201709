@@ -26,19 +26,22 @@ Construye la clase `laboratorio9.utils.Log` con la estructura como se muestra en
 
 *Nota: La propiedad `fileName` es `final` y no `static`.*
 
-- `Log(String fileName)`: Inicializar la propiedad `fileName`.
-- `getInstance`: Validar si existe la instancia. De no existir, crear una nueva.
+- `Log(String fileName)`: "Settear" la propiedad `fileName` en el constructor con el valor del argumento de entrada.
+- `getInstance`: Validar si existe la instancia. Si existe, retornarla. De no existir, crear una nueva y retornarla.
 - `write(String message)`: Este método deberá escribir un archivo de texto como sigue:
 
 ```java
-try (BufferedWriter br = new BufferedWriter(new FileWriter(logFile, true))) { 
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            Calendar cal = Calendar.getInstance();
+try {
+            try (BufferedWriter br = new BufferedWriter(new FileWriter(fileName, true))) { 
+                        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        Calendar cal = Calendar.getInstance();
 
-            //Create the name of the file from the path and current time
-            String data = "\n" + dateFormat.format(cal.getTime()) + ": " + message ;
-            br.write(data);
-        }
+                        //Create the name of the file from the path and current time
+                        String data = "\n" + dateFormat.format(cal.getTime()) + ": " + message ;
+                        br.write(data);
+            }
+}
+catch(Exception e) { }
 ```
 
 ## Actividad 3 - Implementación de Logging
