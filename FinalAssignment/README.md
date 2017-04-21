@@ -27,23 +27,18 @@ Para la presentación se deberán considerar los siguientes aspectos
 ## Especificaciones técnicas
 
 - Tipo de aplicación: Web
-
 - Tecnologías:
   - HTML, CSS y JS
   - Java EE 8
   - JSP
   - Servlets
   - Java DB (Apache Derby)
-  
 - Arquitectura: Patrón MVC
-
 - Patrones de diseño esperados
 	- MVC
 	- DTO
 	- DAO
-
 - Seguridad: La aplicación deberá ser resistente (o contemplar) a las siguientes situaciones
-
   - Control de acceso (login y password)
   - Inyección de SQL
   
