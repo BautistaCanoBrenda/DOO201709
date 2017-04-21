@@ -48,4 +48,6 @@ Para la presentación se deberán considerar los siguientes aspectos
 
 *Nota: **No** subir el proyecto en ZIP**
 
+## Fecha de entrega
 
+<< Por definir >>
