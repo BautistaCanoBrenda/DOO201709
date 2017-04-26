@@ -14,7 +14,9 @@ Las presentaciones del curso las podrás encontrar [aquí](http://migsalazar.com
 
 ## Asignaciones
 
-La asignación o asignaciones de cada semana, se encuentran divididas por carpetas (Ej.: Week1, Week2, ... WeekN). Cada carpeta contiene un archivo README.md en donde se describe la actividad. En la misma descripción, se indica la información necesaria para completar la actividad.
+Las asignación se encuentran dentro de Assignments. La asignaciones de cada semana se encuentran divididas por carpetas (Ej.: Week1, Week2, ... WeekN) y FinalAssingment para la asignación final. 
+
+Cada carpeta contiene un archivo README.md en donde se describe la actividad. En la misma descripción, se indica la información necesaria para completar la actividad.
 
 ## Wiki
 
