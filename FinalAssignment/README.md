@@ -50,4 +50,4 @@ Para la presentación se deberán considerar los siguientes aspectos
 
 ## Fecha de entrega
 
-<< Por definir >>
+La fecha de entrega y presentación será el día del examen final, el cual se publica en el tablero de la facultad.
